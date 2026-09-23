@@ -97,15 +97,17 @@ function render() {
     <article class="stock-row" data-ticker="${escapeHTML(stock.ticker)}">
       <span class="rank">${index + 1}</span>
       <div class="identity"><span class="ticker-icon">${escapeHTML(stock.ticker.slice(0, 2))}</span><span><strong>${escapeHTML(stock.ticker)}</strong><small>${escapeHTML(stock.name)}</small></span></div>
-      <div class="stock-metric"><strong>${priceMoney(stock.price)}</strong><small>Latest close</small></div>
+      <div class="stock-metric"><strong>${priceMoney(stock.price)}</strong><small>Adjusted close</small></div>
       <div class="stock-metric"><strong>${stock.return12m > 0 ? "+" : ""}${stock.return12m}%</strong><small>12-month return</small></div>
       <div class="score"><span class="score-ring" style="--score:${stock.score}"><b>${stock.score}</b></span><span class="score-copy"><strong>${signalLabel(stock.score)}</strong><small>Compass score</small></span></div>
       <button class="row-toggle" type="button" aria-label="Show details for ${escapeHTML(stock.ticker)}" aria-expanded="false">⌄</button>
       <div class="stock-detail">
-        <div class="detail-pill"><span>RSI (14)</span><strong>${stock.rsi}</strong></div>
+        <div class="detail-pill"><span>Adjusted close</span><strong>${priceMoney(stock.price)}</strong></div><div class="detail-pill"><span>RSI (14)</span><strong>${stock.rsi}</strong></div>
         <div class="detail-pill"><span>Trend</span><strong>${stock.trend}</strong></div>
         <div class="detail-pill"><span>Volatility</span><strong>${stock.volatility}%</strong></div>
-        <div class="detail-pill"><span>Sector</span><strong>${escapeHTML(stock.sector || "Not supplied")}</strong></div>
+        <div class="detail-pill"><span>Model action</span><strong>${stale ? 'Data stale — wait' : stock.score >= 65 && stock.trend === 'Above 50 & 200 day' ? 'Qualifies for allocation' : 'Watch — no allocation'}</strong></div>
+        ${Object.entries(stock.signals).map(([key,value]) => `<div class="detail-pill"><span>${escapeHTML(key)} score</span><strong>${value} / 100 · weight ${Math.round(profile.weights[key]*100)}%</strong></div>`).join('')}
+        <div class="detail-pill"><span>Price date</span><strong>${escapeHTML(stock.asOf || market.asOf)}</strong></div>
       </div>
     </article>`).join("") : '<p class="empty">Awaiting the first successful market scan. No buy signals or allocations are available yet.</p>';
 
@@ -152,3 +154,16 @@ $("#methodButton").addEventListener("click", () => {
   $("#methodButton span").textContent = open ? "−" : "+";
 });
 init();
+
+async function loadPaper() {
+  try {
+    const response=await fetch('./data/paper.json',{cache:'no-store'});
+    if(!response.ok) return;
+    const book=await response.json();
+    $('#paperStatus').textContent=`Signals frozen ${book.signalDate} · Report ${book.asOf} · ${book.entryDate ? 'Entry '+book.entryDate : 'Awaiting the next session close; no performance results yet.'}`;
+    const cards=book.portfolios.map(p=>({label:p.label,metrics:p.metrics,status:p.status}));
+    cards.push({label:'SPY benchmark',metrics:book.benchmark,status:'Next-session close entry'});
+    $('#paperCards').innerHTML=cards.map(p=>`<article class="summary-card"><span>${escapeHTML(p.label)}</span><strong>${p.metrics?money(p.metrics.equity):'Pending'}</strong><small>${p.metrics ? p.metrics.returnPct+'% return · '+p.metrics.drawdownPct+'% max drawdown' : escapeHTML(p.status)}</small></article>`).join('');
+  } catch { $('#paperStatus').textContent='Paper comparison unavailable; no performance claim is made.'; }
+}
+loadPaper();

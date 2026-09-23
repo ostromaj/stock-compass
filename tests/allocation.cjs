@@ -11,3 +11,14 @@ for(const profile of Object.keys(ctx.config)) for(const count of [0,1,2,5]) for(
 }
 assert.equal(ctx.test('balanced',[{score:64,volatility:20,trend:'Mixed'}],5000).investable,0);
 console.log('Allocation caps, cash conservation, empty universe and watch-only gates passed');
+const nodes={};
+ctx.document={querySelector:s=>nodes[s]??=( {value:'5000',textContent:'',innerHTML:'',setCustomValidity(){},reportValidity(){}}),querySelectorAll:()=>[]};
+vm.runInContext(`market={asOf:new Date().toISOString().slice(0,10),stocks:[{ticker:'TEST',name:'<script>bad</script>',price:100,return12m:10,rsi:55,volatility:25,trend:'Above 50 & 200 day',signals:{trend:90,momentum:90,rsi:90,macd:90,volume:90,support:90,stability:90}}]};render();`,ctx);
+assert(nodes['#stockList'].innerHTML.includes('&lt;script&gt;'));
+assert(!nodes['#stockList'].innerHTML.includes('<script>bad'));
+assert(nodes['#allocationBars'].innerHTML.includes('shares'));
+vm.runInContext(`market.asOf='2000-01-01';render();`,ctx);
+assert.equal(nodes['#invested'].textContent,'$0.00');
+vm.runInContext(`market.stocks=[];render();`,ctx);
+assert(nodes['#stockList'].innerHTML.includes('Awaiting'));
+console.log('Rendering, escaped company names and stale-data allocation checks passed');

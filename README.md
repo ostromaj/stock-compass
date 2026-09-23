@@ -14,7 +14,7 @@ Custom, hand-selected weights for trend, 6/12-month momentum, Wilder-style RSI, 
 
 Conservative: 20% reserve / 20% position cap. Balanced: 10% / 24%. Aggressive: 5% / 28%. Five stocks are not a complete diversified portfolio. No trading or brokerage integration.
 
-No fabricated prices, backtest results or performance claims. Backtesting, fundamental analysis and prospective strategy comparisons are not implemented in this first technical version; weights have not been validated as predictive.
+No fabricated prices, backtest results or performance claims. Historical backtesting and fundamental analysis are not implemented; weights have not been validated as predictive. Forward paper portfolios freeze each risk profile’s initial picks and compare them with SPY. Entries occur at the next trading session close with 0.1% cost; all returns use matching adjusted-price histories. Missing holding prices suppress the portfolio result instead of dropping losers. This is a forward observational comparison, not a randomized causal A/B experiment.
 
 ## Operation
 

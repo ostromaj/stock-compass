@@ -8,7 +8,9 @@ from __future__ import annotations
 import io
 import json
 import math
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timezone, timedelta
+from zoneinfo import ZoneInfo
+from collections import Counter
 import time
 import re
 from pathlib import Path
@@ -47,6 +49,8 @@ def scaled(value: float, low: float, high: float, reverse: bool = False) -> floa
 
 def scan(tickers: list[str]):
     downloaded = 0
+    now = datetime.now(ZoneInfo("America/New_York"))
+    cutoff = now.date() if now.hour >= 17 else now.date() - timedelta(days=1)
     results: list[dict] = []
     for start in range(0, len(tickers), 100):
         batch = tickers[start:start + 100]
@@ -57,6 +61,7 @@ def scan(tickers: list[str]):
         for ticker in batch:
             try:
                 frame = data[ticker].dropna() if isinstance(data.columns, pd.MultiIndex) else data.dropna()
+                frame = frame[frame.index.date <= cutoff]
                 close = frame["Close"].astype(float)
                 volume = frame["Volume"].astype(float)
                 if len(close) > 0: downloaded += 1
@@ -99,6 +104,7 @@ def scan(tickers: list[str]):
                 })
             except (KeyError, IndexError, TypeError, ValueError):
                 continue
+        print(f"Progress: {min(start+100,len(tickers))}/{len(tickers)} attempted; {downloaded} downloaded; {len(results)} eligible",flush=True)
         time.sleep(1)
     return results, downloaded
 
@@ -109,7 +115,9 @@ def main() -> None:
     stocks, downloaded = scan(list(universe))
     if downloaded < len(universe) * .70 or len(stocks) < 100:
         raise RuntimeError(f'Insufficient coverage: {downloaded}/{len(universe)} histories; preserving prior scan')
-    latest = max(s['asOf'] for s in stocks)
+    dates = Counter(s['asOf'] for s in stocks)
+    print(f'Closing-date distribution: {dates}',flush=True)
+    latest = dates.most_common(1)[0][0]
     stocks = [s for s in stocks if s['asOf'] == latest]
     if len(stocks) < 100: raise RuntimeError('Too few current histories; preserving prior scan')
     for stock in stocks: stock['name'] = universe[stock['ticker']]
