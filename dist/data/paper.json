@@ -1,0 +1,94 @@
+{
+  "signalDate": "2026-09-21",
+  "asOf": "2026-09-21",
+  "portfolios": [
+    {
+      "key": "conservative",
+      "label": "Conservative quality",
+      "cash": 2000.0100000000002,
+      "orders": [
+        {
+          "ticker": "MSGS",
+          "amount": 1740.16
+        },
+        {
+          "ticker": "MSGE",
+          "amount": 1328.13
+        },
+        {
+          "ticker": "RUSHB",
+          "amount": 1237.05
+        },
+        {
+          "ticker": "PBAM",
+          "amount": 2000
+        },
+        {
+          "ticker": "PSTL",
+          "amount": 1694.65
+        }
+      ],
+      "status": "Awaiting next session close",
+      "metrics": null
+    },
+    {
+      "key": "balanced",
+      "label": "Balanced opportunity",
+      "cash": 1000.0200000000004,
+      "orders": [
+        {
+          "ticker": "MSGE",
+          "amount": 1942.66
+        },
+        {
+          "ticker": "MSGS",
+          "amount": 2337.64
+        },
+        {
+          "ticker": "RUSHB",
+          "amount": 1734.04
+        },
+        {
+          "ticker": "ROIV",
+          "amount": 1422.91
+        },
+        {
+          "ticker": "AVT",
+          "amount": 1562.73
+        }
+      ],
+      "status": "Awaiting next session close",
+      "metrics": null
+    },
+    {
+      "key": "aggressive",
+      "label": "Aggressive growth",
+      "cash": 500.02999999999884,
+      "orders": [
+        {
+          "ticker": "MSGE",
+          "amount": 2289.84
+        },
+        {
+          "ticker": "ILMN",
+          "amount": 1586.88
+        },
+        {
+          "ticker": "ROIV",
+          "amount": 1833.46
+        },
+        {
+          "ticker": "SB",
+          "amount": 2078.27
+        },
+        {
+          "ticker": "TEN",
+          "amount": 1711.52
+        }
+      ],
+      "status": "Awaiting next session close",
+      "metrics": null
+    }
+  ],
+  "benchmark": null
+}
