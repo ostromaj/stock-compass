@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A long-term stock screener that ranks five opportunities and sizes positions to your budget and risk preference.">
+  <title>Stock Compass — Long-term opportunity scanner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1020'/%3E%3Cpath d='M7 22l6-6 4 3 8-10' fill='none' stroke='%235ce1a4' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='25' cy='9' r='2.5' fill='%23f4b860'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Stock Compass home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>Stock Compass</span>
+      </a>
+      <div class="market-status"><span class="pulse"></span><span id="scanStatus">Awaiting data</span><strong id="asOf">—</strong></div>
+    </header>
+
+    <main>
+      <section class="control-panel" aria-labelledby="dashboard-title">
+        <div class="intro">
+          <p class="eyebrow">LONG-TERM OPPORTUNITY SCANNER</p>
+          <h1 id="dashboard-title">Put your next dollars to work.</h1>
+          <p>Choose your risk level and budget. The model ranks five technically strong U.S. stocks and builds a disciplined allocation.</p>
+        </div>
+        <div class="controls-card">
+          <fieldset class="risk-control">
+            <legend>Investing style</legend>
+            <div class="segmented" role="radiogroup" aria-label="Investing style">
+              <label><input type="radio" name="risk" value="conservative"><span>Conservative</span></label>
+              <label><input type="radio" name="risk" value="balanced" checked><span>Balanced <em>Suggested</em></span></label>
+              <label><input type="radio" name="risk" value="aggressive"><span>Aggressive</span></label>
+            </div>
+          </fieldset>
+          <label class="budget-control" for="budget">
+            <span>Available budget</span>
+            <span class="money-input"><span>$</span><input id="budget" type="number" min="0" max="10000000" step="100" value="5000" inputmode="decimal"></span>
+          </label>
+          <button class="allocate-button" id="allocateButton" type="button">Build my allocation <span aria-hidden="true">→</span></button>
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="Portfolio summary">
+        <article class="summary-card highlight">
+          <span>Model stance</span>
+          <strong id="stance">Balanced opportunity</strong>
+          <small id="stanceNote">Trend strength with volatility guardrails</small>
+        </article>
+        <article class="summary-card">
+          <span>Suggested to invest</span>
+          <strong id="invested">$0</strong>
+          <small id="cashText">$0 held as cash buffer</small>
+        </article>
+        <article class="summary-card">
+          <span>Listings attempted</span>
+          <strong id="universe">—</strong>
+          <small>See scan coverage below</small>
+        </article>
+        <article class="summary-card">
+          <span>Next scheduled scan</span>
+          <strong>Weekdays</strong>
+          <small>After the U.S. market close</small>
+        </article>
+      </section>
+
+      <section class="opportunities" aria-labelledby="opportunities-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TODAY'S RANKING</p>
+            <h2 id="opportunities-title">Top five opportunities</h2>
+          </div>
+          <button class="method-button" id="methodButton" type="button" aria-expanded="false" aria-controls="methodPanel">How the score works <span>+</span></button>
+        </div>
+        <div class="method-panel" id="methodPanel" hidden>
+          <p>The score blends 50/200-day trend, RSI, MACD, volume confirmation, 6/12-month momentum, distance from support, and volatility. Each risk setting changes the weights and the cash reserve. The weights are hand-designed and have not been validated as predictive. A score of at least 65 and a price above rising 50/200-day averages qualifies for a model allocation; other candidates remain on watch. Sizes favor lower volatility, respect per-position limits, and leave unused funds in cash. Fractional share estimates assume broker support and exclude fees. These are five research candidates, not a diversified whole portfolio. It is a screening signal—not a prediction or guarantee.</p>
+        </div>
+        <p id="coverage" class="allocation-note"></p><div class="stock-list" id="stockList" aria-live="polite"></div>
+      </section>
+
+      <section class="allocation" aria-labelledby="allocation-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">BUDGET PLAN</p>
+            <h2 id="allocation-title">Suggested allocation</h2>
+          </div>
+          <p class="allocation-note" id="allocationNote">Based on a $5,000 budget</p>
+        </div>
+        <div class="allocation-layout">
+          <div class="allocation-bars" id="allocationBars"></div>
+          <aside class="guardrail-card">
+            <span class="shield" aria-hidden="true">◇</span>
+            <h3>Built-in guardrails</h3>
+            <ul id="guardrails"></ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="disclaimer">
+        <strong>Research tool, not financial advice.</strong>
+        <p>Stock Compass uses historical market data and rule-based signals. Markets can fall and you can lose money. Verify the data, consider taxes and fees, and consult a qualified financial professional before investing.</p>
+      </section>
+    </main>
+
+    <footer><span>Stock Compass</span><span>Transparent signals · Daily data · Long-term focus</span></footer>
+  </div>
+  <script src="./app.js" defer></script>
+</body>
+</html>

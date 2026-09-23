@@ -1,0 +1,52 @@
+name: Scan and publish Stock Compass
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '30 22 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: stock-compass
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: node tests/allocation.cjs
+      - name: Scan market
+        id: scan
+        continue-on-error: true
+        run: python scripts/update_market.py
+      - name: Preserve successful scan
+        if: steps.scan.outcome == 'success'
+        run: |
+          git config user.name 'stock-compass-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add dist/data/stocks.json
+          git diff --cached --quiet || git commit -m 'Refresh verified market scan'
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Report scan failure
+        if: steps.scan.outcome == 'failure'
+        run: |
+          echo '::error::Market scan failed. Last successful data retained; check scan logs.'
+          exit 1
