@@ -1,6 +1,6 @@
 {
   "signalDate": "2026-09-21",
-  "asOf": "2026-09-21",
+  "asOf": "2026-09-24",
   "portfolios": [
     {
       "key": "conservative",
@@ -28,7 +28,7 @@
           "amount": 1694.65
         }
       ],
-      "status": "Awaiting next session close",
+      "status": "Unpriced holdings: RUSHB",
       "metrics": null
     },
     {
@@ -57,7 +57,7 @@
           "amount": 1562.73
         }
       ],
-      "status": "Awaiting next session close",
+      "status": "Unpriced holdings: RUSHB",
       "metrics": null
     },
     {
@@ -86,9 +86,20 @@
           "amount": 1711.52
         }
       ],
-      "status": "Awaiting next session close",
-      "metrics": null
+      "status": "Tracking buy-and-hold",
+      "metrics": {
+        "equity": 9922.46,
+        "returnPct": -0.78,
+        "drawdownPct": -1.46,
+        "sessions": 4
+      }
     }
   ],
-  "benchmark": null
+  "benchmark": {
+    "equity": 9909.91,
+    "returnPct": -0.9,
+    "drawdownPct": -0.9,
+    "sessions": 4
+  },
+  "entryDate": "2026-09-22"
 }
