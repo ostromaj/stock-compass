@@ -1,6 +1,6 @@
 {
   "signalDate": "2026-09-21",
-  "asOf": "2026-09-28",
+  "asOf": "2026-09-29",
   "portfolios": [
     {
       "key": "conservative",
@@ -28,7 +28,7 @@
           "amount": 1694.65
         }
       ],
-      "status": "Unpriced holdings: PBAM",
+      "status": "Unpriced holdings: PSTL",
       "metrics": null
     },
     {
@@ -59,10 +59,10 @@
       ],
       "status": "Tracking buy-and-hold",
       "metrics": {
-        "equity": 10170.61,
-        "returnPct": 1.71,
+        "equity": 10133.69,
+        "returnPct": 1.34,
         "drawdownPct": -0.55,
-        "sessions": 6
+        "sessions": 7
       }
     },
     {
@@ -93,18 +93,18 @@
       ],
       "status": "Tracking buy-and-hold",
       "metrics": {
-        "equity": 10007.56,
-        "returnPct": 0.08,
+        "equity": 10024.48,
+        "returnPct": 0.24,
         "drawdownPct": -1.67,
-        "sessions": 6
+        "sessions": 7
       }
     }
   ],
   "benchmark": {
-    "equity": 9889.63,
-    "returnPct": -1.1,
-    "drawdownPct": -1.1,
-    "sessions": 6
+    "equity": 9871.42,
+    "returnPct": -1.29,
+    "drawdownPct": -1.29,
+    "sessions": 7
   },
   "entryDate": "2026-09-22"
 }
