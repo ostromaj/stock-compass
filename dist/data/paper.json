@@ -1,6 +1,6 @@
 {
   "signalDate": "2026-09-21",
-  "asOf": "2026-10-06",
+  "asOf": "2026-10-08",
   "portfolios": [
     {
       "key": "conservative",
@@ -28,7 +28,7 @@
           "amount": 1694.65
         }
       ],
-      "status": "Unpriced holdings: PSTL",
+      "status": "Unpriced holdings: MSGE",
       "metrics": null
     },
     {
@@ -57,13 +57,8 @@
           "amount": 1562.73
         }
       ],
-      "status": "Tracking buy-and-hold",
-      "metrics": {
-        "equity": 10113.87,
-        "returnPct": 1.14,
-        "drawdownPct": -2.06,
-        "sessions": 12
-      }
+      "status": "Unpriced holdings: MSGE",
+      "metrics": null
     },
     {
       "key": "aggressive",
@@ -91,20 +86,15 @@
           "amount": 1711.52
         }
       ],
-      "status": "Tracking buy-and-hold",
-      "metrics": {
-        "equity": 10125.94,
-        "returnPct": 1.26,
-        "drawdownPct": -2.05,
-        "sessions": 12
-      }
+      "status": "Unpriced holdings: MSGE",
+      "metrics": null
     }
   ],
   "benchmark": {
-    "equity": 10063.76,
-    "returnPct": 0.64,
+    "equity": 9997.1,
+    "returnPct": -0.03,
     "drawdownPct": -1.49,
-    "sessions": 12
+    "sessions": 14
   },
   "entryDate": "2026-09-22"
 }
