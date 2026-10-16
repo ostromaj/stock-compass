@@ -1,6 +1,6 @@
 {
   "signalDate": "2026-09-21",
-  "asOf": "2026-10-14",
+  "asOf": "2026-10-15",
   "portfolios": [
     {
       "key": "conservative",
@@ -86,15 +86,15 @@
           "amount": 1711.52
         }
       ],
-      "status": "Unpriced holdings: MSGE, ILMN, ROIV",
+      "status": "Unpriced holdings: MSGE, ROIV",
       "metrics": null
     }
   ],
   "benchmark": {
-    "equity": 9941.17,
-    "returnPct": -0.59,
+    "equity": 9969.46,
+    "returnPct": -0.31,
     "drawdownPct": -1.49,
-    "sessions": 18
+    "sessions": 19
   },
   "entryDate": "2026-09-22"
 }
