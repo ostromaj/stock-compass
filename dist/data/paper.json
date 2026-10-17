@@ -28,8 +28,13 @@
           "amount": 1694.65
         }
       ],
-      "status": "Unpriced holdings: MSGS, MSGE, PSTL",
-      "metrics": null
+      "status": "Tracking buy-and-hold",
+      "metrics": {
+        "equity": 9846.5,
+        "returnPct": -1.53,
+        "drawdownPct": -1.8,
+        "sessions": 19
+      }
     },
     {
       "key": "balanced",
@@ -57,8 +62,13 @@
           "amount": 1562.73
         }
       ],
-      "status": "Unpriced holdings: MSGE, MSGS, ROIV",
-      "metrics": null
+      "status": "Tracking buy-and-hold",
+      "metrics": {
+        "equity": 9897.67,
+        "returnPct": -1.02,
+        "drawdownPct": -2.97,
+        "sessions": 19
+      }
     },
     {
       "key": "aggressive",
@@ -86,7 +96,7 @@
           "amount": 1711.52
         }
       ],
-      "status": "Unpriced holdings: MSGE, ROIV",
+      "status": "Unpriced holdings: SB",
       "metrics": null
     }
   ],
