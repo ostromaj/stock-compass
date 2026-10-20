@@ -1,6 +1,6 @@
 {
   "signalDate": "2026-09-21",
-  "asOf": "2026-10-15",
+  "asOf": "2026-10-16",
   "portfolios": [
     {
       "key": "conservative",
@@ -30,10 +30,10 @@
       ],
       "status": "Tracking buy-and-hold",
       "metrics": {
-        "equity": 9846.5,
-        "returnPct": -1.53,
-        "drawdownPct": -1.8,
-        "sessions": 19
+        "equity": 9740.18,
+        "returnPct": -2.6,
+        "drawdownPct": -2.68,
+        "sessions": 20
       }
     },
     {
@@ -64,10 +64,10 @@
       ],
       "status": "Tracking buy-and-hold",
       "metrics": {
-        "equity": 9897.67,
-        "returnPct": -1.02,
-        "drawdownPct": -2.97,
-        "sessions": 19
+        "equity": 9718.71,
+        "returnPct": -2.81,
+        "drawdownPct": -4.44,
+        "sessions": 20
       }
     },
     {
@@ -101,10 +101,10 @@
     }
   ],
   "benchmark": {
-    "equity": 9969.46,
-    "returnPct": -0.31,
-    "drawdownPct": -1.49,
-    "sessions": 19
+    "equity": 9859.15,
+    "returnPct": -1.41,
+    "drawdownPct": -2.03,
+    "sessions": 20
   },
   "entryDate": "2026-09-22"
 }
