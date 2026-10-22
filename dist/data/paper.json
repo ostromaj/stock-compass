@@ -1,6 +1,6 @@
 {
   "signalDate": "2026-09-21",
-  "asOf": "2026-10-19",
+  "asOf": "2026-10-20",
   "portfolios": [
     {
       "key": "conservative",
@@ -28,8 +28,13 @@
           "amount": 1694.65
         }
       ],
-      "status": "Unpriced holdings: RUSHB",
-      "metrics": null
+      "status": "Tracking buy-and-hold",
+      "metrics": {
+        "equity": 9925.94,
+        "returnPct": -0.74,
+        "drawdownPct": -2.9,
+        "sessions": 22
+      }
     },
     {
       "key": "balanced",
@@ -57,7 +62,7 @@
           "amount": 1562.73
         }
       ],
-      "status": "Unpriced holdings: RUSHB",
+      "status": "Unpriced holdings: ROIV",
       "metrics": null
     },
     {
@@ -86,20 +91,15 @@
           "amount": 1711.52
         }
       ],
-      "status": "Tracking buy-and-hold",
-      "metrics": {
-        "equity": 9743.15,
-        "returnPct": -2.57,
-        "drawdownPct": -5.81,
-        "sessions": 21
-      }
+      "status": "Unpriced holdings: ROIV",
+      "metrics": null
     }
   ],
   "benchmark": {
-    "equity": 9900.87,
-    "returnPct": -0.99,
+    "equity": 9934.07,
+    "returnPct": -0.66,
     "drawdownPct": -2.03,
-    "sessions": 21
+    "sessions": 22
   },
   "entryDate": "2026-09-22"
 }
