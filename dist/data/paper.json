@@ -1,6 +1,6 @@
 {
   "signalDate": "2026-09-21",
-  "asOf": "2026-10-28",
+  "asOf": "2026-10-30",
   "portfolios": [
     {
       "key": "conservative",
@@ -28,8 +28,13 @@
           "amount": 1694.65
         }
       ],
-      "status": "Unpriced holdings: MSGE",
-      "metrics": null
+      "status": "Tracking buy-and-hold",
+      "metrics": {
+        "equity": 9891.78,
+        "returnPct": -1.08,
+        "drawdownPct": -2.9,
+        "sessions": 30
+      }
     },
     {
       "key": "balanced",
@@ -57,7 +62,7 @@
           "amount": 1562.73
         }
       ],
-      "status": "Unpriced holdings: MSGE",
+      "status": "Unpriced holdings: ROIV",
       "metrics": null
     },
     {
@@ -86,15 +91,15 @@
           "amount": 1711.52
         }
       ],
-      "status": "Unpriced holdings: MSGE",
+      "status": "Unpriced holdings: ROIV",
       "metrics": null
     }
   ],
   "benchmark": {
-    "equity": 9976.18,
-    "returnPct": -0.24,
-    "drawdownPct": -2.45,
-    "sessions": 28
+    "equity": 9761.88,
+    "returnPct": -2.38,
+    "drawdownPct": -3.0,
+    "sessions": 30
   },
   "entryDate": "2026-09-22"
 }
