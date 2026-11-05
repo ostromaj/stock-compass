@@ -1,6 +1,6 @@
 {
   "signalDate": "2026-09-21",
-  "asOf": "2026-11-03",
+  "asOf": "2026-11-04",
   "portfolios": [
     {
       "key": "conservative",
@@ -88,18 +88,18 @@
       ],
       "status": "Tracking buy-and-hold",
       "metrics": {
-        "equity": 9585.97,
-        "returnPct": -4.14,
-        "drawdownPct": -8.37,
-        "sessions": 32
+        "equity": 9492.04,
+        "returnPct": -5.08,
+        "drawdownPct": -8.63,
+        "sessions": 33
       }
     }
   ],
   "benchmark": {
-    "equity": 9744.18,
-    "returnPct": -2.56,
+    "equity": 9905.13,
+    "returnPct": -0.95,
     "drawdownPct": -3.46,
-    "sessions": 32
+    "sessions": 33
   },
   "entryDate": "2026-09-22"
 }
