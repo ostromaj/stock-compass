@@ -1,6 +1,6 @@
 {
   "signalDate": "2026-09-21",
-  "asOf": "2026-11-05",
+  "asOf": "2026-11-06",
   "portfolios": [
     {
       "key": "conservative",
@@ -28,13 +28,8 @@
           "amount": 1694.65
         }
       ],
-      "status": "Tracking buy-and-hold",
-      "metrics": {
-        "equity": 9864.9,
-        "returnPct": -1.35,
-        "drawdownPct": -2.9,
-        "sessions": 34
-      }
+      "status": "Unpriced holdings: MSGS, MSGE, PBAM, PSTL",
+      "metrics": null
     },
     {
       "key": "balanced",
@@ -62,7 +57,7 @@
           "amount": 1562.73
         }
       ],
-      "status": "Unpriced holdings: AVT",
+      "status": "Unpriced holdings: MSGE, MSGS, ROIV",
       "metrics": null
     },
     {
@@ -91,20 +86,15 @@
           "amount": 1711.52
         }
       ],
-      "status": "Tracking buy-and-hold",
-      "metrics": {
-        "equity": 9029.55,
-        "returnPct": -9.7,
-        "drawdownPct": -13.08,
-        "sessions": 34
-      }
+      "status": "Unpriced holdings: MSGE, ROIV",
+      "metrics": null
     }
   ],
   "benchmark": {
-    "equity": 9468.4,
-    "returnPct": -5.32,
+    "equity": 9497.98,
+    "returnPct": -5.02,
     "drawdownPct": -5.92,
-    "sessions": 34
+    "sessions": 35
   },
   "entryDate": "2026-09-22"
 }
