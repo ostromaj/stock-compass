@@ -1,6 +1,6 @@
 {
   "signalDate": "2026-09-21",
-  "asOf": "2026-11-12",
+  "asOf": "2026-11-13",
   "portfolios": [
     {
       "key": "conservative",
@@ -30,10 +30,10 @@
       ],
       "status": "Tracking buy-and-hold",
       "metrics": {
-        "equity": 10058.94,
-        "returnPct": 0.59,
+        "equity": 10043.29,
+        "returnPct": 0.43,
         "drawdownPct": -2.9,
-        "sessions": 39
+        "sessions": 40
       }
     },
     {
@@ -64,10 +64,10 @@
       ],
       "status": "Tracking buy-and-hold",
       "metrics": {
-        "equity": 10117.76,
-        "returnPct": 1.18,
+        "equity": 10114.64,
+        "returnPct": 1.15,
         "drawdownPct": -4.44,
-        "sessions": 39
+        "sessions": 40
       }
     },
     {
@@ -96,20 +96,15 @@
           "amount": 1711.52
         }
       ],
-      "status": "Tracking buy-and-hold",
-      "metrics": {
-        "equity": 9659.21,
-        "returnPct": -3.41,
-        "drawdownPct": -13.08,
-        "sessions": 39
-      }
+      "status": "Unpriced holdings: ILMN",
+      "metrics": null
     }
   ],
   "benchmark": {
-    "equity": 9779.96,
-    "returnPct": -2.2,
+    "equity": 9744.44,
+    "returnPct": -2.56,
     "drawdownPct": -5.92,
-    "sessions": 39
+    "sessions": 40
   },
   "entryDate": "2026-09-22"
 }
