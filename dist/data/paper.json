@@ -1,6 +1,6 @@
 {
   "signalDate": "2026-09-21",
-  "asOf": "2026-11-18",
+  "asOf": "2026-11-20",
   "portfolios": [
     {
       "key": "conservative",
@@ -28,7 +28,7 @@
           "amount": 1694.65
         }
       ],
-      "status": "Unpriced holdings: MSGS",
+      "status": "Unpriced holdings: RUSHB",
       "metrics": null
     },
     {
@@ -57,7 +57,7 @@
           "amount": 1562.73
         }
       ],
-      "status": "Unpriced holdings: MSGS",
+      "status": "Unpriced holdings: RUSHB",
       "metrics": null
     },
     {
@@ -88,18 +88,18 @@
       ],
       "status": "Tracking buy-and-hold",
       "metrics": {
-        "equity": 9472.61,
-        "returnPct": -5.27,
+        "equity": 9126.88,
+        "returnPct": -8.73,
         "drawdownPct": -13.08,
-        "sessions": 43
+        "sessions": 45
       }
     }
   ],
   "benchmark": {
-    "equity": 9432.23,
-    "returnPct": -5.68,
-    "drawdownPct": -6.28,
-    "sessions": 43
+    "equity": 8910.5,
+    "returnPct": -10.9,
+    "drawdownPct": -11.46,
+    "sessions": 45
   },
   "entryDate": "2026-09-22"
 }
